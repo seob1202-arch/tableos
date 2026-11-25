@@ -1,0 +1,14 @@
+/* ─────────────────────────────────────────────────────────────
+   Wanted Design System — Webfonts
+   Both are open-source (SIL OFL) fonts published by the type
+   authors and served from jsDelivr. If you need self-hosted
+   binaries, drop them in assets/fonts/ and swap these @imports
+   for local @font-face rules.
+
+   • Pretendard JP  — primary UI/body typeface (family: "Pretendard JP")
+   • Wanted Sans    — brand / display typeface (family: "Wanted Sans Variable")
+   ───────────────────────────────────────────────────────────── */
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-jp.min.css");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-jp.min.css");
+@import url("https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.1/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css");

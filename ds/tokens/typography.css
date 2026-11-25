@@ -1,0 +1,78 @@
+/* ─────────────────────────────────────────────────────────────
+   Wanted Design System — Typography
+   Semantic type scale. Primary typeface: Pretendard JP.
+   Values transcribed from the Figma source; the scale follows
+   Wanted's named tokens (Display / Title / Heading / Headline /
+   Body / Label / Caption). Each token is exposed as CSS custom
+   properties AND a ready-to-use utility class.
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  /* Families */
+  --font-base: "Pretendard JP", Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Wanted Sans Variable", "Wanted Sans", "Pretendard JP", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "SF Mono", "SFMono-Regular", ui-monospace, "Menlo", "Consolas", monospace;
+
+  /* Weights */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* Type scale — size / line-height / letter-spacing (per token) */
+  --font-display1: var(--weight-bold) 56px/1.286 var(--font-base);
+  --font-display2: var(--weight-bold) 40px/1.30 var(--font-base);
+  --font-title1:   var(--weight-bold) 36px/1.334 var(--font-base);
+  --font-title2:   var(--weight-bold) 28px/1.357 var(--font-base);
+  --font-title3:   var(--weight-bold) 24px/1.334 var(--font-base);
+  --font-heading1: var(--weight-bold) 22px/1.318 var(--font-base);
+  --font-heading2: var(--weight-semibold) 20px/1.40 var(--font-base);
+  --font-headline1: var(--weight-semibold) 18px/1.444 var(--font-base);
+  --font-headline2: var(--weight-semibold) 17px/1.412 var(--font-base);
+  --font-body1-normal:  var(--weight-medium) 16px/1.50 var(--font-base);
+  --font-body1-reading: var(--weight-regular) 16px/1.50 var(--font-base);
+  --font-body2-normal:  var(--weight-semibold) 15px/1.467 var(--font-base);
+  --font-body2-reading: var(--weight-regular) 15px/1.467 var(--font-base);
+  --font-label1-normal:  var(--weight-semibold) 14px/1.429 var(--font-base);
+  --font-label1-reading: var(--weight-medium) 14px/1.429 var(--font-base);
+  --font-label2:  var(--weight-semibold) 13px/1.385 var(--font-base);
+  --font-caption1: var(--weight-semibold) 12px/1.333 var(--font-base);
+  --font-caption2: var(--weight-semibold) 11px/1.273 var(--font-base);
+
+  /* Letter-spacing per token (Wanted optical tracking) */
+  --tracking-display1: -0.032em;
+  --tracking-display2: -0.032em;
+  --tracking-title1: -0.027em;
+  --tracking-title2: -0.025em;
+  --tracking-title3: -0.023em;
+  --tracking-heading1: -0.019em;
+  --tracking-heading2: -0.012em;
+  --tracking-headline1: -0.002em;
+  --tracking-headline2: 0em;
+  --tracking-body1: 0.0057em;
+  --tracking-body2: 0.0096em;
+  --tracking-label1: 0.0145em;
+  --tracking-label2: 0.0188em;
+  --tracking-caption1: 0.0252em;
+  --tracking-caption2: 0.0313em;
+}
+
+/* Utility classes */
+.wds-display1 { font: var(--font-display1); letter-spacing: var(--tracking-display1); }
+.wds-display2 { font: var(--font-display2); letter-spacing: var(--tracking-display2); }
+.wds-title1   { font: var(--font-title1);   letter-spacing: var(--tracking-title1); }
+.wds-title2   { font: var(--font-title2);   letter-spacing: var(--tracking-title2); }
+.wds-title3   { font: var(--font-title3);   letter-spacing: var(--tracking-title3); }
+.wds-heading1 { font: var(--font-heading1); letter-spacing: var(--tracking-heading1); }
+.wds-heading2 { font: var(--font-heading2); letter-spacing: var(--tracking-heading2); }
+.wds-headline1 { font: var(--font-headline1); letter-spacing: var(--tracking-headline1); }
+.wds-headline2 { font: var(--font-headline2); letter-spacing: var(--tracking-headline2); }
+.wds-body1     { font: var(--font-body1-normal);  letter-spacing: var(--tracking-body1); }
+.wds-body1-reading { font: var(--font-body1-reading); letter-spacing: var(--tracking-body1); }
+.wds-body2     { font: var(--font-body2-normal);  letter-spacing: var(--tracking-body2); }
+.wds-body2-reading { font: var(--font-body2-reading); letter-spacing: var(--tracking-body2); }
+.wds-label1    { font: var(--font-label1-normal); letter-spacing: var(--tracking-label1); }
+.wds-label1-reading { font: var(--font-label1-reading); letter-spacing: var(--tracking-label1); }
+.wds-label2    { font: var(--font-label2);   letter-spacing: var(--tracking-label2); }
+.wds-caption1  { font: var(--font-caption1); letter-spacing: var(--tracking-caption1); }
+.wds-caption2  { font: var(--font-caption2); letter-spacing: var(--tracking-caption2); }

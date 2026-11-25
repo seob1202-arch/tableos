@@ -1,0 +1,8 @@
+/* ═══════════════════════════════════════════════════════════════
+   Wanted Design System — global stylesheet entry point.
+   Consumers link THIS file. It is an @import manifest only.
+   ═══════════════════════════════════════════════════════════════ */
+
+@import "./tokens/fonts.css";
+@import "./fig-tokens.css";      /* Figma Variables: 488 tokens, all theme modes */
+@import "./tokens/typography.css";

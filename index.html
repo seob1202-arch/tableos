@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/wanted-design-system-ec589acd-eec2-4d78-9b6a-8c35a794c11e/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/wanted-design-system-ec589acd-eec2-4d78-9b6a-8c35a794c11e/fig-tokens.css">
+  <link rel="stylesheet" href="_ds/wanted-design-system-ec589acd-eec2-4d78-9b6a-8c35a794c11e/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/wanted-design-system-ec589acd-eec2-4d78-9b6a-8c35a794c11e/styles.css">
+  <script src="_ds/wanted-design-system-ec589acd-eec2-4d78-9b6a-8c35a794c11e/_ds_bundle.js"></script>
+  <script src="./image-slot.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--cool-neutral-99); color: var(--cool-neutral-10); font-family: 'Pretendard JP', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: var(--blue-50); text-decoration: none; }
+    a:hover { color: var(--blue-40); text-decoration: underline; }
+    input[type=number]::-webkit-inner-spin-button { opacity: 0.5; }
+  </style>
+</helmet>
+<template id="__bundler_thumbnail" data-bg-color="#171719"><svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><rect x="36" y="36" width="48" height="48" rx="12" fill="#0066FF"></rect><circle cx="60" cy="60" r="9" fill="none" stroke="#fff" stroke-width="3.5"></circle><circle cx="60" cy="45" r="3" fill="#fff"></circle><circle cx="60" cy="75" r="3" fill="#fff"></circle><circle cx="45" cy="60" r="3" fill="#fff"></circle><circle cx="75" cy="60" r="3" fill="#fff"></circle></svg></template>
+
+<div style="min-height: 100vh; overflow-x: hidden;">
+
+  <!-- 1. HERO -->
+  <header data-screen-label="01 Hero" style="background: var(--cool-neutral-10); color: #fff; padding: 0 20px 56px;">
+    <div style="max-width: 1160px; margin: 0 auto;">
+      <nav style="display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 72px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div aria-hidden="true" style="width: 28px; height: 28px; border-radius: 8px; background: var(--blue-50); display: grid; place-items: center;"><svg viewBox="0 0 20 20" style="width: 20px; height: 20px;"><circle cx="10" cy="10" r="4.2" style="fill: none; stroke: #fff; stroke-width: 1.8;"></circle><circle cx="10" cy="2.6" r="1.5" style="fill: #fff;"></circle><circle cx="10" cy="17.4" r="1.5" style="fill: #fff;"></circle><circle cx="2.6" cy="10" r="1.5" style="fill: #fff;"></circle><circle cx="17.4" cy="10" r="1.5" style="fill: #fff;"></circle></svg></div>
+          <span style="font: 700 20px/1 'Wanted Sans Variable', 'Pretendard JP', sans-serif; letter-spacing: -0.02em;">TableOS</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 20px;">
+          <button onClick="{{ goPricing }}" style="background: none; border: none; color: rgba(255,255,255,0.8); font: var(--font-body2-normal); cursor: pointer; min-height: 44px; padding: 0 4px;">Pricing</button>
+          <x-import component-from-global-scope="WantedDesignSystem_ec589a.Button" size="medium" hint-size="128px,40px">Book a demo</x-import>
+        </div>
+      </nav>
+
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 48px; padding-top: clamp(24px, 6vw, 72px);">
+        <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 24px;">
+          <span style="font: var(--font-label1-normal); letter-spacing: var(--tracking-label1); color: rgba(255,255,255,0.72);">For independent restaurants in London</span>
+          <h1 style="margin: 0; font: 700 clamp(40px, 6.4vw, 72px)/1.08 'Wanted Sans Variable', 'Pretendard JP', sans-serif; letter-spacing: -0.035em; text-wrap: balance;">{{ headline }}</h1>
+          <p style="margin: 0; max-width: 520px; font: 400 clamp(17px, 1.6vw, 20px)/1.55 'Pretendard JP', sans-serif; color: rgba(255,255,255,0.8); text-wrap: pretty;">TableOS adds phone ordering, staff requests and a live prime-cost gauge to the restaurant you already run. Month to month. No new hardware.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 8px;">
+            <x-import component-from-global-scope="WantedDesignSystem_ec589a.Button" size="large" hint-size="230px,48px">Book a 15-minute demo</x-import>
+            <x-import component-from-global-scope="WantedDesignSystem_ec589a.Button" size="large" dc-props="{{ ghostDark }}" onClick="{{ goPilot }}" hint-size="230px,48px">Start a 30-day free pilot</x-import>
+          </div>
+        </div>
+
+        <div style="flex: 1 1 460px; min-width: 0; position: relative; height: 480px;">
+          <sc-if value="{{ heroPhoto }}" hint-placeholder-val="{{ true }}">
+            <div style="position: absolute; inset: 0 0 40px 40px; border-radius: 24px; overflow: hidden; background: var(--cool-neutral-20);">
+              <image-slot id="hero-dining-room" shape="rect" placeholder="Photo: a busy London dining room at service" src="https://images.unsplash.com/photo-1508424757105-b6d5ad9329d0?fm=jpg&amp;q=70&amp;w=1600&amp;auto=format&amp;fit=crop" credit="Photo by kayleigh harrington on Unsplash" credit-href="https://unsplash.com/@kayleighharrington"></image-slot>
+            </div>
+          </sc-if>
+          <!-- laptop -->
+          <div style="position: absolute; left: 0; top: 56px; width: min(82%, 480px); pointer-events: none;">
+            <div style="background: var(--cool-neutral-22); border-radius: 14px 14px 0 0; padding: 10px 10px 0;">
+              <div style="background: #fff; color: var(--cool-neutral-10); border-radius: 6px 6px 0 0; padding: 16px; display: flex; flex-direction: column; gap: 12px; box-sizing: border-box;">
+                <div style="display: flex; justify-content: space-between; align-items: center; font: 600 12px/1 'Pretendard JP', sans-serif; color: var(--cool-neutral-30);"><span>Tonight · Prime cost</span><span>Updated 21:14</span></div>
+                <div style="display: flex; align-items: center; gap: 16px;">
+                  <svg viewBox="0 0 120 68" style="width: 44%; max-width: 170px; flex: none;">
+                    <path d="M10 60 A50 50 0 0 1 110 60" pathLength="30" style="fill: none; stroke: var(--green-50); stroke-width: 12; stroke-dasharray: 15 100;"></path>
+                    <path d="M10 60 A50 50 0 0 1 110 60" pathLength="30" style="fill: none; stroke: var(--orange-50); stroke-width: 12; stroke-dasharray: 0 15 5 100;"></path>
+                    <path d="M10 60 A50 50 0 0 1 110 60" pathLength="30" style="fill: none; stroke: var(--cool-neutral-30); stroke-width: 12; stroke-dasharray: 0 20 10 100;"></path>
+                    <line x1="60" y1="60" x2="68" y2="22" style="stroke: var(--cool-neutral-10); stroke-width: 3; stroke-linecap: round;"></line>
+                    <circle cx="60" cy="60" r="5" style="fill: var(--cool-neutral-10);"></circle>
+                  </svg>
+                  <div style="display: flex; flex-direction: column; gap: 6px;">
+                    <span style="font: 700 40px/1 'Wanted Sans Variable', 'Pretendard JP', sans-serif; letter-spacing: -0.03em;">57%</span>
+                    <span style="align-self: flex-start; padding: 4px 8px; border-radius: 6px; background: var(--orange-95); color: var(--orange-30); font: 700 12px/1 'Pretendard JP', sans-serif;">Watch zone</span>
+                    <span style="font: 500 11px/1.4 'Pretendard JP', sans-serif; color: var(--cool-neutral-40);">Food 31% + labour 26%</span>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 6px; font: 500 10px/1.3 'Pretendard JP', sans-serif;">
+                  <span style="flex: 1; padding: 6px; border-radius: 6px; background: var(--green-95); color: var(--green-30);">Under 55% healthy</span>
+                  <span style="flex: 1; padding: 6px; border-radius: 6px; background: var(--orange-95); color: var(--orange-30);">55–60% watch</span>
+                  <span style="flex: 1; padding: 6px; border-radius: 6px; background: var(--cool-neutral-97); color: var(--cool-neutral-25);">Over 60% critical</span>
+                </div>
+              </div>
+            </div>
+            <div style="height: 12px; background: var(--cool-neutral-30); border-radius: 0 0 12px 12px; margin: 0 -18px;"></div>
+          </div>
+          <!-- phone -->
+          <div style="position: absolute; right: 4%; bottom: 0; width: 196px; background: var(--cool-neutral-15); border-radius: 30px; padding: 8px; box-shadow: 0 24px 48px rgba(0,0,0,0.4); pointer-events: none;">
+            <div style="background: #fff; color: var(--cool-neutral-10); border-radius: 23px; overflow: hidden; display: flex; flex-direction: column;">
+              <div style="height: 92px; background: var(--cool-neutral-95); display: flex; align-items: flex-end; padding: 10px; box-sizing: border-box;">
+                <span style="font: 600 10px/1 'Pretendard JP', sans-serif; padding: 4px 6px; border-radius: 4px; background: rgba(255,255,255,0.9);">日本語 ▾</span>
+              </div>
+              <div style="padding: 12px; display: flex; flex-direction: column; gap: 8px;">
+                <span style="font: 700 15px/1.3 'Pretendard JP', sans-serif;">石焼ビビンバ</span>
+                <span style="font: 500 11px/1.4 'Pretendard JP', sans-serif; color: var(--cool-neutral-40);">Dolsot bibimbap · £14.50</span>
+                <div style="border-radius: 8px; background: var(--red-95); color: var(--red-30); padding: 8px; display: flex; flex-direction: column; gap: 4px;">
+                  <span style="font: 700 11px/1.3 'Pretendard JP', sans-serif;">アレルゲンを含む</span>
+                  <span style="font: 600 11px/1.3 'Pretendard JP', sans-serif;">卵 · ごま · 大豆 · 小麦</span>
+                </div>
+                <span style="font: 500 10px/1.4 'Pretendard JP', sans-serif; color: var(--cool-neutral-30);">スタッフにもお伝えください</span>
+                <div style="height: 34px; border-radius: 8px; background: var(--blue-50); color: #fff; display: grid; place-items: center; font: 700 12px/1 'Pretendard JP', sans-serif;">カートに追加</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.14); display: flex; flex-wrap: wrap; gap: 12px 32px; font: var(--font-body2-normal); letter-spacing: var(--tracking-body2); color: rgba(255,255,255,0.8);">
+        <span style="display: flex; align-items: center; gap: 8px;"><x-import component-from-global-scope="WantedDesignSystem_ec589a.Icon" name="check" size="{{ 18 }}" hint-size="18px,18px"></x-import>Works with your existing till and card terminal</span>
+        <span style="display: flex; align-items: center; gap: 8px;"><x-import component-from-global-scope="WantedDesignSystem_ec589a.Icon" name="check" size="{{ 18 }}" hint-size="18px,18px"></x-import>Month to month</span>
+        <span style="display: flex; align-items: center; gap: 8px;"><x-import component-from-global-scope="WantedDesignSystem_ec589a.Icon" name="check" size="{{ 18 }}" hint-size="18px,18px"></x-import>Set up from one photo of your menu in 48 hours</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. PAINS -->
+  <section data-screen-label="02 Pains" style="padding: clamp(72px, 10vw, 128px) 20px;">
+    <div style="max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px;">
+      <h2 style="margin: 0; max-width: 720px; font: 700 clamp(30px, 4vw, 44px)/1.15 'Wanted Sans Variable', 'Pretendard JP', sans-serif; letter-spacing: -0.03em; text-wrap: balance;">Three things that cost you money every service.</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 20px;">
+        <article style="background: #fff; border-radius: 24px; padding: clamp(28px, 3vw, 40px); display: flex; flex-direction: column; gap: 20px;">
+          <span style="font: var(--font-label1-normal); color: var(--cool-neutral-40); letter-spacing: 0.04em; text-transform: uppercase;">Margin</span>
+          <span style="font: 700 clamp(72px, 9vw, 104px)/0.9 'Wanted Sans Variable', 'Pretendard JP', sans-serif; letter-spacing: -0.05em;">30p<sup style="font-size: 0.24em; vertical-align: top; color: var(--cool-neutral-40);">1</sup></span>
+          <p style="margin: 0; font: 700 clamp(21px, 2vw, 24px)/1.35 'Pretendard JP', sans-serif; letter-spacing: -0.01em; text-wrap: pretty;">Food is roughly 30p of every £1 you take, and you only see the damage at month end.</p>
+          <p style="margin: 0; font: var(--font-body1-reading); color: var(--label-alternative); text-wrap: pretty; flex: 1;">Waste, over-portioning and quiet supplier price rises are the usual leaks.</p>
+          <button onClick="{{ go1 }}" style="align-self: flex-start; display: flex; align-items: center; gap: 6px; min-height: 44px; padding: 0; background: none; border: none; color: var(--blue-50); font: var(--font-body1-normal); font-weight: 700; cursor: pointer;">How TableOS fixes it<x-import component-from-global-scope="WantedDesignSystem_ec589a.Icon" name="arrow-down" size="{{ 18 }}" hint-size="18px,18px"></x-import></button>
+        </article>
+        <article style="background: #fff; border-radius: 24px; padding: clamp(28px, 3vw, 40px); display: flex; flex-direction: column; gap: 20px;">
+          <span style="font: var(--font-label1-normal); color: var(--cool-neutral-40); letter-spacing: 0.04em; text-transform: uppercase;">Staff</span>
+          <span style="font: 700 clamp(72px, 9vw, 104px)/0.9 'Wanted Sans Variable', 'Pretendard JP', sans-serif; letter-spacing: -0.05em;">£76<sup style="font-size: 0.24em; vertical-align: top; color: var(--cool-neutral-40);">2</sup></span>
+          <p style="margin: 0; font: 700 clamp(21px, 2vw, 24px)/1.35 'Pretendard JP', sans-serif; letter-spacing: -0.01em; text-wrap: pretty;">One server, twelve tables, and someone is always waving.</p>
+          <p style="margin: 0; font: var(--font-body1-reading); color: var(--label-alternative); text-wrap: pretty; flex: 1;">Every shift you cannot trim costs about £76 (6 hours at the £12.71 National Living Wage).</p>
+          <button onClick="{{ go2 }}" style="align-self: flex-start; display: flex; align-items: center; gap: 6px; min-height: 44px; padding: 0; background: none; border: none; color: var(--blue-50); font: var(--font-body1-normal); font-weight: 700; cursor: pointer;">How TableOS fixes it<x-import component-from-global-scope="WantedDesignSystem_ec589a.Icon" name="arrow-down" size="{{ 18 }}" hint-size="18px,18px"></x-import></button>
+        </article>
+        <article style="background: #fff; border-radius: 24px; padding: clamp(28px, 3vw, 40px); display: flex; flex-direction: column; gap: 20px;">
+          <span style="font: var(--font-label1-normal); color: var(--red-30); letter-spacing: 0.04em; text-transform: uppercase;">Allergens</span>
+          <span style="font: 700 clamp(72px, 9vw, 104px)/0.9 'Wanted Sans Variable', 'Pretendard JP', sans-serif; letter-spacing: -0.05em; color: var(--red-40);">14</span>
+          <p style="margin: 0; font: 700 clamp(21px, 2vw, 24px)/1.35 'Pretendard JP', sans-serif; letter-spacing: -0.01em; text-wrap: pretty;">One allergy mistake can cost you far more than a bad night.</p>
+          <p style="margin: 0; font: var(--font-body1-reading); color: var(--label-alternative); text-wrap: pretty; flex: 1;">14 UK allergens, guests from everywhere, and a busy kitchen reading handwritten notes.</p>
+          <button onClick="{{ go3 }}" style="align-self: flex-start; display: flex; align-items: center; gap: 6px; min-height: 44px; padding: 0; background: none; border: none; color: var(--blue-50); font: var(--font-body1-normal); font-weight: 700; cursor: pointer;">How TableOS fixes it<x-import component-from-global-scope="WantedDesignSystem_ec589a.Icon" name="arrow-down" size="{{ 18 }}" hint-size="18px,18px"></x-import></button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. FIX 1 -->
+  <section id="fix-1" data-screen-label="03 Fix margin" style="padding: clamp(72px, 10vw, 120px) 20px; background: #fff;">
+    <div style="max-width: 1160px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 56px; align-items: center;">
+      <div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 24px;">
+        <span style="font: var(--font-label1-normal); color: var(--blue-50); font-weight: 700;">Fix 1 · Margin</span>
+        <h2 style="margin: 0; font: 700 clamp(30px, 4vw, 44px)/1.15 'Wanted Sans Variable', 'Pretendard JP', sans-serif; letter-spacing: -0.03em; text-wrap: balance;">Margin you can see every night.</h2>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 16px; font: var(--font-body1-reading); color: var(--label-neutral);">
+          <li style="display: flex; gap: 12px;"><span style="color: var(--blue-50); flex: none; padding-top: 2px;"><x-import component-from-global-scope="WantedDesignSystem_ec589a.Icon" name="check-bold" size="{{ 20 }}" hint-size="20px,20px"></x-import></span>One-tap waste log on the kitchen screen.</li>
+          <li style="display: flex; gap: 12px;"><span style="color: var(--blue-50); flex: none; padding-top: 2px;"><x-import component-from-global-scope="WantedDesignSystem_ec589a.Icon" name="check-bold" size="{{ 20 }}" hint-size="20px,20px"></x-import></span>A photo of a supplier invoice flags price rises and short weights.</li>
+          <li style="display: flex; gap: 12px;"><span style="color: var(--blue-50); flex: none; padding-top: 2px;"><x-import component-from-global-scope="WantedDesignSystem_ec589a.Icon" name="check-bold" size="{{ 20 }}" hint-size="20px,20px"></x-import></span>Surplus stock becomes "Today's special" on the guest menu.</li>
+          <li style="display: flex; gap: 12px;"><span style="color: var(--blue-50); flex: none; padding-top: 2px;"><x-import component-from-global-scope="WantedDesignSystem_ec589a.Icon" name="check-bold" size="{{ 20 }}" hint-size="20px,20px"></x-import></span>Menu engineering shows which dishes to push, reprice or drop.</li>
+        </ul>
+        <p style="margin: 8px 0 0; padding-top: 24px; border-top: 1px solid var(--line-normal-neutral); font: 700 clamp(20px, 2vw, 24px)/1.4 'Pretendard JP', sans-serif; letter-spacing: -0.01em; text-wrap: pretty;">Your POS tells you what you sold. TableOS tells you what to do next.</p>
+      </div>
+
+      <div style="flex: 1.4 1 520px; min-width: 0;">
+        <div style="background: var(--cool-neutral-22); border-radius: 18px 18px 0 0; padding: 12px 12px 0;">
+          <div style="background: var(--cool-neutral-99); border-radius: 8px 8px 0 0; padding: clamp(14px, 2vw, 24px); display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+              <span style="font: 700 16px/1.2 'Pretendard JP', sans-serif;">Back office · Home</span>
+              <span style="font: 500 12px/1 'Pretendard JP', sans-serif; color: var(--cool-neutral-40);">This week · Mon–Sun</span>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 12px;">
+              <div style="background: #fff; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 8px;">
+                <span style="font: 600 12px/1 'Pretendard JP', sans-serif; color: var(--cool-neutral-40);">Prime cost</span>
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <svg viewBox="0 0 120 68" style="width: 110px; flex: none;">
+                    <path d="M10 60 A50 50 0 0 1 110 60" pathLength="30" style="fill: none; stroke: var(--green-50); stroke-width: 12; stroke-dasharray: 15 100;"></path>
+                    <path d="M10 60 A50 50 0 0 1 110 60" pathLength="30" style="fill: none; stroke: var(--orange-50); stroke-width: 12; stroke-dasharray: 0 15 5 100;"></path>
+                    <path d="M10 60 A50 50 0 0 1 110 60" pathLength="30" style="fill: none; stroke: var(--cool-neutral-30); stroke-width: 12; stroke-dasharray: 0 20 10 100;"></path>
+                    <line x1="60" y1="60" x2="68" y2="22" style="stroke: var(--cool-neutral-10); stroke-width: 3; stroke-linecap: round;"></line>
+                    <circle cx="60" cy="60" r="5" style="fill: var(--cool-neutral-10);"></circle>
+                  </svg>
+                  <div style="display: flex; flex-direction: column; gap: 4px;">
+                    <span style="font: 700 30px/1 'Wanted Sans Variable', 'Pretendard JP', sans-serif;">57%</span>
+                    <span style="align-self: flex-start; padding: 3px 6px; border-radius: 5px; background: var(--orange-95); color: var(--orange-30); font: 700 11px/1 'Pretendard JP', sans-serif;">Watch</span>
+                  </div>
+                </div>
+              </div>
+              <div style="background: #fff; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 8px;">
+                <span style="font: 600 12px/1 'Pretendard JP', sans-serif; color: var(--cool-neutral-40);">4-week trend</span>
+                <div style="display: flex; align-items: flex-end; gap: 10px; height: 64px;">
+                  <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;"><span style="font: 600 10px/1 'Pretendard JP', sans-serif;">54</span><div style="width: 100%; height: 36px; border-radius: 4px; background: var(--green-50);"></div></div>
+                  <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;"><span style="font: 600 10px/1 'Pretendard JP', sans-serif;">56</span><div style="width: 100%; height: 42px; border-radius: 4px; background: var(--orange-50);"></div></div>
+                  <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;"><span style="font: 600 10px/1 'Pretendard JP', sans-serif;">58</span><div style="width: 100%; height: 48px; border-radius: 4px; background: var(--orange-50);"></div></div>
+                  <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;"><span style="font: 600 10px/1 'Pretendard JP', sans-serif;">57</span><div style="width: 100%; height: 45px; border-radius: 4px; background: var(--orange-50); outline: 2px solid var(--cool-neutral-10); outline-offset: 1px;"></div></div>
+                </div>
+              </div>
+            </div>
+            <div style="background: #fff; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 10px;">
+              <span style="font: 600 12px/1 'Pretendard JP', sans-serif; color: var(--cool-neutral-40);">Where it went</span>
+              <div style="display: flex; height: 14px; border-radius: 4px; overflow: hidden; gap: 2px;">
+                <div style="flex: 31; background: var(--cool-neutral-10);"></div>
+                <div style="flex: 26; background: var(--blue-50);"></div>
+                <div style="flex: 43; background: var(--cool-neutral-96);"></div>
+              </div>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px 16px; font: 500 12px/1.3 'Pretendard JP', sans-serif; color: var(--cool-neutral-30);">
+                <span>■ Food 31% (target 30%)</span><span style="color: var(--blue-40);">■ Labour 26%</span><span>■ Everything else 43%</span>
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap: 10px;">
+              <div style="background: #fff; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 8px; border-top: 3px solid var(--orange-50);">
+                <span style="font: 700 13px/1.35 'Pretendard JP', sans-serif;">Bulgogi food cost 38% → target 30%</span>
+                <span style="font: 600 12px/1 'Pretendard JP', sans-serif; color: var(--blue-50);">Review portion →</span>
+              </div>
+              <div style="background: #fff; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 8px; border-top: 3px solid var(--orange-50);">
+                <span style="font: 700 13px/1.35 'Pretendard JP', sans-serif;">2 boxes of tomatoes left by Sunday</span>
+                <span style="font: 600 12px/1 'Pretendard JP', sans-serif; color: var(--blue-50);">Approve a special →</span>
+              </div>
+              <div style="background: #fff; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 8px; border-top: 3px solid var(--orange-50);">
+                <span style="font: 700 13px/1.35 'Pretendard JP', sans-serif;">After 21:00 labour is 32% of sales</span>
+                <span style="font: 600 12px/1 'Pretendard JP', sans-serif; color: var(--blue-50);">See rota →</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="height: 14px; background: var(--cool-neutral-30); border-radius: 0 0 14px 14px; margin: 0 -20px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. FIX 2 -->
+  <section id="fix-2" data-screen-label="04 Fix staff" style="padding: clamp(72px, 10vw, 120px) 20px;">
+    <div style="max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px;">
+      <div style="display: flex; flex-wrap: wrap; gap: 32px 56px;">
+        <div style="flex: 1 1 360px; display: flex; flex-direction: column; gap: 20px;">
+          <span style="font: var(--font-label1-normal); color: var(--blue-50); font-weight: 700;">Fix 2 · Staff</span>
+          <h2 style="margin: 0; font: 700 clamp(30px, 4vw, 44px)/1.15 'Wanted Sans Variable', 'Pretendard JP', sans-serif; letter-spacing: -0.03em; text-wrap: balance;">The same team covers more tables.</h2>
+        </div>
+        <ul style="flex: 1.3 1 420px; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; font: var(--font-body1-reading); color: var(--label-neutral);">
+          <li style="display: flex; gap: 12px;"><span style="color: var(--blue-50); flex: none; padding-top: 2px;"><x-import component-from-global-scope="WantedDesignSystem_ec589a.Icon" name="check-bold" size="{{ 20 }}" hint-size="20px,20px"></x-import></span>Guests order and pay themselves, so servers stop running for menus, orders and card machines.</li>
+          <li style="display: flex; gap: 12px;"><span style="color: var(--blue-50); flex: none; padding-top: 2px;"><x-import component-from-global-scope="WantedDesignSystem_ec589a.Icon" name="check-bold" size="{{ 20 }}" hint-size="20px,20px"></x-import></span>Requests go to the right waiter's phone and escalate to the manager after 2 minutes.</li>
+          <li style="display: flex; gap: 12px;"><span style="color: var(--blue-50); flex: none; padding-top: 2px;"><x-import component-from-global-scope="WantedDesignSystem_ec589a.Icon" name="check-bold" size="{{ 20 }}" hint-size="20px,20px"></x-import></span>Kitchen tickets are translated into the chef's language.</li>
+          <li style="display: flex; gap: 12px;"><span style="color: var(--blue-50); flex: none; padding-top: 2px;"><x-import component-from-global-scope="WantedDesignSystem_ec589a.Icon" name="check-bold" size="{{ 20 }}" hint-size="20px,20px"></x-import></span>A labour alert suggests when to send someone home early.</li>
+          <li style="display: flex; gap: 12px;"><span style="color: var(--blue-50); flex: none; padding-top: 2px;"><x-import component-from-global-scope="WantedDesignSystem_ec589a.Icon" name="check-bold" size="{{ 20 }}" hint-size="20px,20px"></x-import></span>Tap to Pay turns any staff phone into a card reader.</li>
+        </ul>
+      </div>
+
+      <div style="background: var(--cool-neutral-10); border-radius: 28px; padding: clamp(24px, 4vw, 48px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 32px; justify-items: center; position: relative; overflow: hidden;">
+        <!-- guest phone -->
+        <div style="display: flex; flex-direction: column; gap: 14px; align-items: center; width: 100%; max-width: 260px;">
+          <div style="width: 100%; background: var(--cool-neutral-22); border-radius: 34px; padding: 8px; box-sizing: border-box;">
+            <div style="background: #fff; border-radius: 27px; padding: 20px 14px; display: flex; flex-direction: column; gap: 14px; min-height: 380px; box-sizing: border-box;">
+              <span style="font: 600 12px/1 'Pretendard JP', sans-serif; color: var(--cool-neutral-40);">Table 7</span>
+              <span style="font: 700 18px/1.25 'Pretendard JP', sans-serif;">What do you need?</span>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                <div style="aspect-ratio: 1; border-radius: 14px; background: var(--cool-neutral-98); display: flex; flex-direction: column; justify-content: flex-end; padding: 12px; font: 700 14px/1.2 'Pretendard JP', sans-serif;">Water</div>
+                <div style="aspect-ratio: 1; border-radius: 14px; background: var(--cool-neutral-98); display: flex; flex-direction: column; justify-content: flex-end; padding: 12px; font: 700 14px/1.2 'Pretendard JP', sans-serif;">Plates</div>
+                <div style="aspect-ratio: 1; border-radius: 14px; background: var(--blue-50); color: #fff; display: flex; flex-direction: column; justify-content: flex-end; padding: 12px; font: 700 14px/1.2 'Pretendard JP', sans-serif;">Bill</div>
+                <div style="aspect-ratio: 1; border-radius: 14px; background: var(--cool-neutral-98); display: flex; flex-direction: column; justify-content: flex-end; padding: 12px; font: 700 14px/1.2 'Pretendard JP', sans-serif;">Something's wrong</div>
+              </div>
+              <span style="font: 500 12px/1.4 'Pretendard JP', sans-serif; color: var(--green-30);">✓ Sent to Mina · usually under 2 min</span>
+            </div>
+          </div>
+          <span style="font: var(--font-label1-normal); color: rgba(255,255,255,0.8);">Guest phone</span>
+        </div>
+        <!-- waiter phone -->
+        <div style="display: flex; flex-direction: column; gap: 14px; align-items: center; width: 100%; max-width: 260px;">
+          <div style="width: 100%; background: var(--cool-neutral-22); border-radius: 34px; padding: 8px; box-sizing: border-box;">
+            <div style="background: var(--cool-neutral-99); border-radius: 27px; padding: 20px 14px; display: flex; flex-direction: column; gap: 10px; min-height: 380px; box-sizing: border-box;">
+              <span style="font: 700 16px/1.2 'Pretendard JP', sans-serif;">Mina · Section B</span>
+              <div style="background: #fff; border-radius: 12px; padding: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; border-left: 0; box-shadow: 0 1px 4px rgba(23,23,25,0.06);">
+                <div style="display: flex; flex-direction: column; gap: 4px;"><span style="font: 700 14px/1.2 'Pretendard JP', sans-serif;">T7 · Bill</span><span style="font: 500 11px/1 'Pretendard JP', sans-serif; color: var(--cool-neutral-40);">Split by item</span></div>
+                <span style="padding: 5px 8px; border-radius: 6px; background: var(--orange-95); color: var(--orange-30); font: 700 13px/1 'SF Mono', ui-monospace, monospace;">1:42</span>
+              </div>
+              <div style="background: #fff; border-radius: 12px; padding: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; box-shadow: 0 1px 4px rgba(23,23,25,0.06);">
+                <div style="display: flex; flex-direction: column; gap: 4px;"><span style="font: 700 14px/1.2 'Pretendard JP', sans-serif;">T4 · Water ×3</span><span style="font: 500 11px/1 'Pretendard JP', sans-serif; color: var(--cool-neutral-40);">Still</span></div>
+                <span style="padding: 5px 8px; border-radius: 6px; background: var(--cool-neutral-97); color: var(--cool-neutral-25); font: 700 13px/1 'SF Mono', ui-monospace, monospace;">0:38</span>
+              </div>
+              <div style="background: #fff; border-radius: 12px; padding: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; box-shadow: 0 1px 4px rgba(23,23,25,0.06);">
+                <div style="display: flex; flex-direction: column; gap: 4px;"><span style="font: 700 14px/1.2 'Pretendard JP', sans-serif;">T9 · Plates</span><span style="font: 500 11px/1 'Pretendard JP', sans-serif; color: var(--green-30);">Done</span></div>
+                <span style="padding: 5px 8px; border-radius: 6px; background: var(--green-95); color: var(--green-30); font: 700 13px/1 'Pretendard JP', sans-serif;">✓</span>
+              </div>
+              <span style="font: 500 11px/1.4 'Pretendard JP', sans-serif; color: var(--cool-neutral-40);">Unanswered after 2:00 goes to the manager.</span>
+            </div>
+          </div>
+          <span style="font: var(--font-label1-normal); color: rgba(255,255,255,0.8);">Waiter phone</span>
+        </div>
+        <!-- kitchen ticket -->
+        <div style="display: flex; flex-direction: column; gap: 14px; align-items: center; width: 100%; max-width: 260px;">
+          <div style="width: 100%; background: #fff; border-radius: 4px; padding: 20px 18px 28px; box-sizing: border-box; display: flex; flex-direction: column; gap: 12px; font-family: 'SF Mono', ui-monospace, monospace; min-height: 396px; mask: radial-gradient(circle 6px at 50% 100%, transparent 98%, #000) 0 0 / 16px 100%;">
+            <div style="display: flex; justify-content: space-between; font: 700 13px/1 'SF Mono', ui-monospace, monospace;"><span>테이블 7</span><span>21:14</span></div>
+            <span style="font: 500 11px/1 'SF Mono', ui-monospace, monospace; color: var(--cool-neutral-40);">Table 7 · 4 guests</span>
+            <div style="border-top: 1px dashed var(--cool-neutral-90);"></div>
+            <div style="display: flex; flex-direction: column; gap: 2px;"><span style="font: 700 16px/1.3 'Pretendard JP', sans-serif;">2 × 불고기</span><span style="font: 500 12px/1.3 'SF Mono', ui-monospace, monospace; color: var(--cool-neutral-40);">Bulgogi</span></div>
+            <div style="display: flex; flex-direction: column; gap: 2px;"><span style="font: 700 16px/1.3 'Pretendard JP', sans-serif;">1 × 김치찌개</span><span style="font: 500 12px/1.3 'SF Mono', ui-monospace, monospace; color: var(--cool-neutral-40);">Kimchi stew</span></div>
+            <div style="display: flex; flex-direction: column; gap: 2px;"><span style="font: 700 16px/1.3 'Pretendard JP', sans-serif;">1 × 해물파전</span><span style="font: 500 12px/1.3 'SF Mono', ui-monospace, monospace; color: var(--cool-neutral-40);">Seafood pancake</span></div>
+            <div style="display: flex; flex-direction: column; gap: 2px;"><span style="font: 700 14px/1.3 'Pretendard JP', sans-serif;">— 덜 맵게</span><span style="font: 500 12px/1.3 'SF Mono', ui-monospace, monospace; color: var(--cool-neutral-40);">— less spicy</span></div>
+            <div style="border-top: 1px dashed var(--cool-neutral-90);"></div>
+            <span style="font: 500 11px/1 'SF Mono', ui-monospace, monospace; color: var(--cool-neutral-40);">Server: Mina</span>
+          </div>
+          <span style="font: var(--font-label1-normal); color: rgba(255,255,255,0.8);">Kitchen ticket, Korean first</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. FIX 3 -->
+  <section id="fix-3" data-screen-label="05 Fix allergens" style="padding: clamp(72px, 10vw, 120px) 20px; background: #fff;">
+    <div style="max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px;">
+      <div style="display: flex; flex-wrap: wrap; gap: 32px 56px;">
+        <div style="flex: 1 1 360px; display: flex; flex-direction: column; gap: 20px;">
+          <span style="font: var(--font-label1-normal); color: var(--blue-50); font-weight: 700;">Fix 3 · Allergens</span>
+          <h2 style="margin: 0; font: 700 clamp(30px, 4vw, 44px)/1.15 'Wanted Sans Variable', 'Pretendard JP', sans-serif; letter-spacing: -0.03em; text-wrap: balance;">Allergens handled like a procedure, not a promise.</h2>
+        </div>
+        <ul style="flex: 1.3 1 420px; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; font: var(--font-body1-reading); color: var(--label-neutral);">
+          <li style="display: flex; gap: 12px;"><span style="color: var(--blue-50); flex: none; padding-top: 2px;"><x-import component-from-global-scope="WantedDesignSystem_ec589a.Icon" name="check-bold" size="{{ 20 }}" hint-size="20px,20px"></x-import></span>AI drafts allergens from your menu photo, but nothing reaches guests until you sign each dish.</li>
+          <li style="display: flex; gap: 12px;"><span style="color: var(--blue-50); flex: none; padding-top: 2px;"><x-import component-from-global-scope="WantedDesignSystem_ec589a.Icon" name="check-bold" size="{{ 20 }}" hint-size="20px,20px"></x-import></span>Every change is versioned and time-stamped.</li>
+          <li style="display: flex; gap: 12px;"><span style="color: var(--blue-50); flex: none; padding-top: 2px;"><x-import component-from-global-scope="WantedDesignSystem_ec589a.Icon" name="check-bold" size="{{ 20 }}" hint-size="20px,20px"></x-import></span>Allergy orders cannot be started without a kitchen acknowledgement.</li>
+          <li style="display: flex; gap: 12px;"><span style="color: var(--blue-50); flex: none; padding-top: 2px;"><x-import component-from-global-scope="WantedDesignSystem_ec589a.Icon" name="check-bold" size="{{ 20 }}" hint-size="20px,20px"></x-import></span>Every allergen screen says "Please also tell our staff".</li>
+        </ul>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px; align-items: start;">
+        <!-- guest dish sheet -->
+        <div style="background: var(--cool-neutral-99); border-radius: 24px; padding: 20px; display: flex; flex-direction: column; gap: 14px;">
+          <span style="font: var(--font-label1-normal); color: var(--cool-neutral-40);">Guest dish sheet · Español</span>
+          <div style="background: #fff; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 4px 16px rgba(23,23,25,0.06);">
+            <div style="display: flex; justify-content: space-between; gap: 8px;"><span style="font: 700 18px/1.3 'Pretendard JP', sans-serif;">Dumplings de gambas</span><span style="font: 700 16px/1.3 'Pretendard JP', sans-serif;">£8.90</span></div>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <span style="font: 700 13px/1 'Pretendard JP', sans-serif; color: var(--red-30);">Contiene</span>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                <span style="padding: 6px 10px; border-radius: 999px; background: var(--red-40); color: #fff; font: 700 13px/1 'Pretendard JP', sans-serif;">Crustáceos</span>
+                <span style="padding: 6px 10px; border-radius: 999px; background: var(--red-40); color: #fff; font: 700 13px/1 'Pretendard JP', sans-serif;">Gluten</span>
+                <span style="padding: 6px 10px; border-radius: 999px; background: var(--red-40); color: #fff; font: 700 13px/1 'Pretendard JP', sans-serif;">Sésamo</span>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <span style="font: 700 13px/1 'Pretendard JP', sans-serif; color: var(--red-30);">Puede contener</span>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                <span style="padding: 5px 10px; border-radius: 999px; border: 1.5px solid var(--red-40); color: var(--red-30); font: 700 13px/1 'Pretendard JP', sans-serif;">Soja</span>
+                <span style="padding: 5px 10px; border-radius: 999px; border: 1.5px solid var(--red-40); color: var(--red-30); font: 700 13px/1 'Pretendard JP', sans-serif;">Moluscos</span>
+              </div>
+            </div>
+            <span style="padding-top: 10px; border-top: 1px solid var(--line-normal-neutral); font: 600 13px/1.4 'Pretendard JP', sans-serif; color: var(--cool-neutral-25);">Por favor, informe también a nuestro personal.</span>
+          </div>
+        </div>
+        <!-- kitchen ticket with ack -->
+        <div style="background: var(--cool-neutral-99); border-radius: 24px; padding: 20px; display: flex; flex-direction: column; gap: 14px;">
+          <span style="font: var(--font-label1-normal); color: var(--cool-neutral-40);">Kitchen screen · try it</span>
+          <div style="background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(23,23,25,0.06);">
+            <div style="background: var(--red-40); color: #fff; padding: 12px 16px; display: flex; flex-direction: column; gap: 4px;">
+              <span style="font: 800 14px/1 'Pretendard JP', sans-serif; letter-spacing: 0.06em;">ALLERGY · PEANUT</span>
+              <span style="font: 500 13px/1.3 'Pretendard JP', sans-serif;">Table 12 · guest 2 · severe</span>
+            </div>
+            <div style="padding: 16px; display: flex; flex-direction: column; gap: 10px;">
+              <span style="font: 700 16px/1.3 'Pretendard JP', sans-serif;">1 × Dan dan noodles <span style="font-weight: 500; color: var(--cool-neutral-40);">(no peanut)</span></span>
+              <span style="font: 700 16px/1.3 'Pretendard JP', sans-serif;">1 × Har gow</span>
+              <div style="display: flex; flex-direction: column; gap: 8px; padding-top: 6px;">
+                <sc-if value="{{ notAck }}" hint-placeholder-val="{{ true }}">
+                  <button onClick="{{ doAck }}" style="min-height: 48px; border-radius: 12px; border: 2px solid var(--red-40); background: var(--red-95); color: var(--red-30); font: 700 15px/1 'Pretendard JP', sans-serif; cursor: pointer;">Acknowledge allergy</button>
+                  <div style="min-height: 48px; border-radius: 12px; background: var(--cool-neutral-97); color: var(--cool-neutral-40); display: flex; align-items: center; justify-content: center; gap: 8px; font: 700 15px/1 'Pretendard JP', sans-serif;"><x-import component-from-global-scope="WantedDesignSystem_ec589a.Icon" name="lock" size="{{ 18 }}" hint-size="18px,18px"></x-import>Start (locked)</div>
+                </sc-if>
+                <sc-if value="{{ ack }}" hint-placeholder-val="{{ false }}">
+                  <div style="min-height: 48px; border-radius: 12px; background: var(--green-95); color: var(--green-30); display: flex; align-items: center; justify-content: center; gap: 8px; font: 700 14px/1.3 'Pretendard JP', sans-serif; padding: 0 12px; text-align: center;">✓ Acknowledged by Chef Wei · 21:16</div>
+                  <button onClick="{{ resetAck }}" style="min-height: 48px; border-radius: 12px; border: none; background: var(--cool-neutral-10); color: #fff; font: 700 15px/1 'Pretendard JP', sans-serif; cursor: pointer;">Start</button>
+                </sc-if>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- owner matrix -->
+        <div style="background: var(--cool-neutral-99); border-radius: 24px; padding: 20px; display: flex; flex-direction: column; gap: 14px;">
+          <span style="font: var(--font-label1-normal); color: var(--cool-neutral-40);">Owner's allergen matrix</span>
+          <div style="background: #fff; border-radius: 16px; padding: 6px 0; box-shadow: 0 4px 16px rgba(23,23,25,0.06); font: 500 13px/1.3 'Pretendard JP', sans-serif;">
+            <div style="display: grid; grid-template-columns: minmax(0, 1fr) repeat(3, 36px); gap: 6px; padding: 10px 14px; color: var(--cool-neutral-40); font-weight: 700; font-size: 11px;"><span>Dish</span><span style="text-align: center;">Glu</span><span style="text-align: center;">Ses</span><span style="text-align: center;">Soy</span></div>
+            <div style="display: grid; grid-template-columns: minmax(0, 1fr) repeat(3, 36px); gap: 6px; padding: 10px 14px; border-top: 1px solid var(--line-normal-neutral); align-items: center;"><span style="display: flex; flex-direction: column; gap: 2px;"><b>Bulgogi</b><span style="font-size: 11px; color: var(--green-30);">✓ Signed · v4 · 18 Nov</span></span><span style="text-align: center; color: var(--red-30); font-weight: 800;">●</span><span style="text-align: center; color: var(--red-30); font-weight: 800;">●</span><span style="text-align: center; color: var(--red-30); font-weight: 800;">●</span></div>
+            <div style="display: grid; grid-template-columns: minmax(0, 1fr) repeat(3, 36px); gap: 6px; padding: 10px 14px; border-top: 1px solid var(--line-normal-neutral); align-items: center; background: var(--orange-99);"><span style="display: flex; flex-direction: column; gap: 4px;"><b>Har gow</b><span style="align-self: flex-start; padding: 2px 6px; border-radius: 4px; background: var(--orange-95); color: var(--orange-30); font-size: 11px; font-weight: 700;">AI draft · needs sign-off</span></span><span style="text-align: center; color: var(--red-30); font-weight: 800;">●</span><span style="text-align: center; color: var(--cool-neutral-90);">–</span><span style="text-align: center; color: var(--red-30);">○</span></div>
+            <div style="display: grid; grid-template-columns: minmax(0, 1fr) repeat(3, 36px); gap: 6px; padding: 10px 14px; border-top: 1px solid var(--line-normal-neutral); align-items: center; background: var(--orange-99);"><span style="display: flex; flex-direction: column; gap: 4px;"><b>Mapo tofu</b><span style="align-self: flex-start; padding: 2px 6px; border-radius: 4px; background: var(--orange-95); color: var(--orange-30); font-size: 11px; font-weight: 700;">AI draft · needs sign-off</span></span><span style="text-align: center; color: var(--red-30);">○</span><span style="text-align: center; color: var(--cool-neutral-90);">–</span><span style="text-align: center; color: var(--red-30); font-weight: 800;">●</span></div>
+            <div style="padding: 10px 14px; border-top: 1px solid var(--line-normal-neutral); font-size: 11px; color: var(--cool-neutral-40);">● contains · ○ may contain · drafts are hidden from guests</div>
+          </div>
+        </div>
+      </div>
+      <p style="margin: 0; max-width: 760px; font: var(--font-body2-reading); color: var(--label-alternative); text-wrap: pretty;">TableOS helps you keep accurate records and a clear process. It does not replace your own checks or legal responsibility.</p>
+    </div>
+  </section>
+
+  <!-- 6. THE REST -->
+  <section data-screen-label="06 And the rest" style="padding: clamp(72px, 10vw, 120px) 20px;">
+    <div style="max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px;">
+      <h2 style="margin: 0; font: 700 clamp(28px, 3.4vw, 38px)/1.2 'Wanted Sans Variable', 'Pretendard JP', sans-serif; letter-spacing: -0.03em;">And the rest of the restaurant.</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px;">
+        <div style="background: #fff; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 12px;"><span style="width: 40px; height: 40px; border-radius: 10px; background: var(--blue-95); color: var(--blue-50); display: grid; place-items: center;"><x-import component-from-global-scope="WantedDesignSystem_ec589a.Icon" name="star" size="{{ 22 }}" hint-size="22px,22px"></x-import></span><span style="font: 700 18px/1.3 'Pretendard JP', sans-serif;">Reviews, the honest way</span><span style="font: var(--font-body1-reading); color: var(--label-alternative);">A thank-you dessert after the mains (never tied to a review), then the same "Share on Google / Tell us privately" choice for every guest. Built to follow Google's review rules.</span></div>
+        <div style="background: #fff; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 12px;"><span style="width: 40px; height: 40px; border-radius: 10px; background: var(--blue-95); color: var(--blue-50); display: grid; place-items: center;"><x-import component-from-global-scope="WantedDesignSystem_ec589a.Icon" name="search" size="{{ 22 }}" hint-size="22px,22px"></x-import></span><span style="font: 700 18px/1.3 'Pretendard JP', sans-serif;">Found by AI search</span><span style="font: var(--font-body1-reading); color: var(--label-alternative);">Your menu, allergens and halal or vegan options published as pages ChatGPT, Gemini and Perplexity can read — updated the moment a dish sells out.</span></div>
+        <div style="background: #fff; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 12px;"><span style="width: 40px; height: 40px; border-radius: 10px; background: var(--blue-95); color: var(--blue-50); display: grid; place-items: center;"><x-import component-from-global-scope="WantedDesignSystem_ec589a.Icon" name="ticket" size="{{ 22 }}" hint-size="22px,22px"></x-import></span><span style="font: 700 18px/1.3 'Pretendard JP', sans-serif;">Regulars come back</span><span style="font: var(--font-body1-reading); color: var(--label-alternative);">A stamp card in Apple or Google Wallet, no app to download.</span></div>
+        <div style="background: #fff; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 12px;"><span style="width: 40px; height: 40px; border-radius: 10px; background: var(--blue-95); color: var(--blue-50); display: grid; place-items: center;"><x-import component-from-global-scope="WantedDesignSystem_ec589a.Icon" name="globe" size="{{ 22 }}" hint-size="22px,22px"></x-import></span><span style="font: 700 18px/1.3 'Pretendard JP', sans-serif;">Every guest's language</span><span style="font: var(--font-body1-reading); color: var(--label-alternative);">Menu, requests and receipts in English, Chinese, Japanese, Korean, Spanish and Arabic.</span></div>
+        <div style="background: #fff; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 12px;"><span style="width: 40px; height: 40px; border-radius: 10px; background: var(--blue-95); color: var(--blue-50); display: grid; place-items: center;"><x-import component-from-global-scope="WantedDesignSystem_ec589a.Icon" name="coins" size="{{ 22 }}" hint-size="22px,22px"></x-import></span><span style="font: 700 18px/1.3 'Pretendard JP', sans-serif;">Split bills, tips and VAT sorted</span><span style="font: var(--font-body1-reading); color: var(--label-alternative);">Split by item on guests' phones, service charge and tips recorded apart, eat-in and takeaway VAT split automatically.</span></div>
+        <div style="background: #fff; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 12px;"><span style="width: 40px; height: 40px; border-radius: 10px; background: var(--blue-95); color: var(--blue-50); display: grid; place-items: center;"><x-import component-from-global-scope="WantedDesignSystem_ec589a.Icon" name="clock" size="{{ 22 }}" hint-size="22px,22px"></x-import></span><span style="font: 700 18px/1.3 'Pretendard JP', sans-serif;">Takeaway and cafés too</span><span style="font: var(--font-body1-reading); color: var(--label-alternative);">TableOS Counter for pre-orders, pickup alerts and stamps.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. COMPARISON -->
+  <section data-screen-label="07 Comparison" style="padding: clamp(72px, 10vw, 120px) 20px; background: #fff;">
+    <div style="max-width: 960px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px;">
+      <h2 style="margin: 0; font: 700 clamp(28px, 3.4vw, 38px)/1.2 'Wanted Sans Variable', 'Pretendard JP', sans-serif; letter-spacing: -0.03em;">How it compares.</h2>
+      <div style="border: 1px solid var(--line-normal-neutral); border-radius: 16px; overflow: hidden;">
+        <div style="display: grid; grid-template-columns: minmax(0, 1.8fr) repeat(3, minmax(64px, 1fr)); align-items: stretch; font: 700 14px/1.25 'Pretendard JP', sans-serif; background: var(--cool-neutral-99);">
+          <span style="padding: 16px;"></span>
+          <span style="padding: 16px 8px; text-align: center; color: var(--cool-neutral-30);">POS reports</span>
+          <span style="padding: 16px 8px; text-align: center; color: var(--cool-neutral-30);">QR ordering apps</span>
+          <span style="padding: 16px 8px; text-align: center; background: var(--blue-50); color: #fff;">TableOS</span>
+        </div>
+        <sc-for list="{{ compareRows }}" as="r" hint-placeholder-count="8">
+          <div style="display: grid; grid-template-columns: minmax(0, 1.8fr) repeat(3, minmax(64px, 1fr)); align-items: stretch; border-top: 1px solid var(--line-normal-neutral); font: var(--font-body2-normal);">
+            <span style="padding: 14px 16px; text-wrap: pretty;">{{ r.label }}</span>
+            <sc-for list="{{ r.cells }}" as="c" hint-placeholder-count="3">
+              <span style="display: flex; align-items: center; justify-content: center; padding: 8px; background: {{ c.bg }}; color: {{ c.fg }}; font: 700 14px/1 'Pretendard JP', sans-serif;">{{ c.text }}</span>
+            </sc-for>
+          </div>
+        </sc-for>
+      </div>
+      <p style="margin: 0; font: var(--font-label1-normal); color: var(--label-alternative);">Comparison based on typical product categories. Check any specific provider's current features.</p>
+    </div>
+  </section>
+
+  <!-- 8. CALCULATOR -->
+  <section id="calculator" data-screen-label="08 Calculator" style="padding: clamp(72px, 10vw, 120px) 20px; background: var(--cool-neutral-10); color: #fff;">
+    <div style="max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px;">
+      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 680px;">
+        <span style="font: var(--font-label1-normal); color: rgba(255,255,255,0.72); font-weight: 700;">Margin leak calculator</span>
+        <h2 style="margin: 0; font: 700 clamp(30px, 4vw, 44px)/1.15 'Wanted Sans Variable', 'Pretendard JP', sans-serif; letter-spacing: -0.03em; text-wrap: balance;">Put in your own numbers.</h2>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch;">
+        <div style="flex: 1 1 320px; background: #fff; color: var(--cool-neutral-10); border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 18px;">
+          <x-import component-from-global-scope="WantedDesignSystem_ec589a.TextField" label="Covers per week" type="number" inputMode="numeric" min="0" value="{{ covers }}" onChange="{{ onCovers }}" hint-size="100%,80px"></x-import>
+          <x-import component-from-global-scope="WantedDesignSystem_ec589a.TextField" label="Average spend per head (£)" type="number" inputMode="decimal" min="0" value="{{ spend }}" onChange="{{ onSpend }}" hint-size="100%,80px"></x-import>
+          <x-import component-from-global-scope="WantedDesignSystem_ec589a.TextField" label="Servers on a typical evening" type="number" inputMode="numeric" min="0" value="{{ servers }}" onChange="{{ onServers }}" hint-size="100%,80px"></x-import>
+          <x-import component-from-global-scope="WantedDesignSystem_ec589a.TextField" label="Estimated waste per week (£)" type="number" inputMode="decimal" min="0" value="{{ waste }}" onChange="{{ onWaste }}" hint-size="100%,80px"></x-import>
+        </div>
+        <div style="flex: 1.4 1 420px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 12px;">
+          <div style="background: var(--cool-neutral-20); border-radius: 20px; padding: 22px; display: flex; flex-direction: column; gap: 10px;"><span style="font: var(--font-body2-normal); color: rgba(255,255,255,0.8);">Monthly food cost at 30% of sales</span><span style="font: 700 clamp(32px, 3.6vw, 40px)/1 'Wanted Sans Variable', 'Pretendard JP', sans-serif; letter-spacing: -0.03em;">{{ outFood }}</span><span style="font: 600 12px/1 'Pretendard JP', sans-serif; color: rgba(255,255,255,0.72);">Estimate</span></div>
+          <div style="background: var(--cool-neutral-20); border-radius: 20px; padding: 22px; display: flex; flex-direction: column; gap: 10px;"><span style="font: var(--font-body2-normal); color: rgba(255,255,255,0.8);">Waste cost per month</span><span style="font: 700 clamp(32px, 3.6vw, 40px)/1 'Wanted Sans Variable', 'Pretendard JP', sans-serif; letter-spacing: -0.03em;">{{ outWaste }}</span><span style="font: 600 12px/1 'Pretendard JP', sans-serif; color: rgba(255,255,255,0.72);">Estimate</span></div>
+          <div style="background: var(--cool-neutral-20); border-radius: 20px; padding: 22px; display: flex; flex-direction: column; gap: 10px;"><span style="font: var(--font-body2-normal); color: rgba(255,255,255,0.8);">One unnecessary server shift a week, per month</span><span style="font: 700 clamp(32px, 3.6vw, 40px)/1 'Wanted Sans Variable', 'Pretendard JP', sans-serif; letter-spacing: -0.03em;">{{ outShift }}</span><span style="font: 600 12px/1 'Pretendard JP', sans-serif; color: rgba(255,255,255,0.72);">Estimate · {{ serversNote }}</span></div>
+          <div style="background: var(--blue-50); border-radius: 20px; padding: 22px; display: flex; flex-direction: column; gap: 10px;"><span style="font: var(--font-body2-normal);">What TableOS Growth costs</span><span style="font: 700 clamp(32px, 3.6vw, 40px)/1 'Wanted Sans Variable', 'Pretendard JP', sans-serif; letter-spacing: -0.03em;">£79<span style="font-size: 0.45em; font-weight: 600;"> a month</span></span><span style="font: 600 12px/1 'Pretendard JP', sans-serif;">Ex VAT · month to month</span></div>
+        </div>
+      </div>
+      <p style="margin: 0; font: 700 clamp(20px, 2.2vw, 26px)/1.4 'Pretendard JP', sans-serif; letter-spacing: -0.01em; max-width: 820px; text-wrap: pretty;">If TableOS saves one server shift a week, it pays for itself about four times over.</p>
+      <p style="margin: 0; font: var(--font-label1-reading); color: rgba(255,255,255,0.72); max-width: 820px;">How we work it out: monthly sales = covers × spend × 52 ÷ 12. Food cost = 30% of monthly sales (industry estimate¹). Waste = weekly waste × 52 ÷ 12. Server shift = 6 hours × £12.71² × 52 ÷ 12 = £330. These are estimates, not a forecast of your savings.</p>
+    </div>
+  </section>
+
+  <!-- 9. PRICING -->
+  <section id="pricing" data-screen-label="09 Pricing" style="padding: clamp(72px, 10vw, 120px) 20px;">
+    <div style="max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px;">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <h2 style="margin: 0; font: 700 clamp(30px, 4vw, 44px)/1.15 'Wanted Sans Variable', 'Pretendard JP', sans-serif; letter-spacing: -0.03em;">Pricing</h2>
+        <p style="margin: 0; font: var(--font-body1-reading); color: var(--label-alternative);">Month to month. Prices ex VAT. 0% markup on card fees.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 16px; align-items: stretch;">
+        <div style="background: #fff; border-radius: 20px; padding: 28px 24px; display: flex; flex-direction: column; gap: 14px; border: 1px solid var(--line-normal-neutral);">
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; min-height: 24px;"><span style="font: 700 20px/1 'Pretendard JP', sans-serif;">Counter</span><x-import component-from-global-scope="WantedDesignSystem_ec589a.ContentBadge" color="lime" size="large" hint-size="80px,24px">Pilot price</x-import></div>
+          <span style="font: 700 44px/1 'Wanted Sans Variable', 'Pretendard JP', sans-serif; letter-spacing: -0.03em;">£19<span style="font: 500 16px/1 'Pretendard JP', sans-serif; color: var(--label-alternative);"> /month</span></span>
+          <span style="font: var(--font-body1-reading); color: var(--label-neutral);">Takeaway and cafés, 0–30 seats.</span>
+        </div>
+        <div style="background: #fff; border-radius: 20px; padding: 28px 24px; display: flex; flex-direction: column; gap: 14px; border: 1px solid var(--line-normal-neutral);">
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; min-height: 24px;"><span style="font: 700 20px/1 'Pretendard JP', sans-serif;">Starter</span></div>
+          <span style="font: 700 44px/1 'Wanted Sans Variable', 'Pretendard JP', sans-serif; letter-spacing: -0.03em;">£39<span style="font: 500 16px/1 'Pretendard JP', sans-serif; color: var(--label-alternative);"> /month</span></span>
+          <span style="font: var(--font-body1-reading); color: var(--label-neutral);">Table service, 20–40 seats.</span>
+        </div>
+        <div style="background: #fff; border-radius: 20px; padding: 28px 24px; display: flex; flex-direction: column; gap: 14px; border: 2px solid var(--blue-50); box-shadow: 0 8px 24px rgba(0,102,255,0.12);">
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; min-height: 24px;"><span style="font: 700 20px/1 'Pretendard JP', sans-serif;">Growth</span><x-import component-from-global-scope="WantedDesignSystem_ec589a.ContentBadge" color="blue" variant="solid" size="large" hint-size="110px,24px">Most restaurants</x-import></div>
+          <span style="font: 700 44px/1 'Wanted Sans Variable', 'Pretendard JP', sans-serif; letter-spacing: -0.03em;">£79<span style="font: 500 16px/1 'Pretendard JP', sans-serif; color: var(--label-alternative);"> /month</span></span>
+          <span style="font: var(--font-body1-reading); color: var(--label-neutral);">50–150 seats. Prime cost, reviews, AI search.</span>
+          <div style="margin-top: auto; padding-top: 8px;"><x-import component-from-global-scope="WantedDesignSystem_ec589a.Button" size="large" fullWidth="{{ true }}" onClick="{{ goPilot }}" hint-size="100%,48px">Start a 30-day free pilot</x-import></div>
+        </div>
+        <div style="background: #fff; border-radius: 20px; padding: 28px 24px; display: flex; flex-direction: column; gap: 14px; border: 1px solid var(--line-normal-neutral);">
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; min-height: 24px;"><span style="font: 700 20px/1 'Pretendard JP', sans-serif;">Pro</span></div>
+          <span style="font: 700 44px/1 'Wanted Sans Variable', 'Pretendard JP', sans-serif; letter-spacing: -0.03em;">£129<span style="font: 500 16px/1 'Pretendard JP', sans-serif; color: var(--label-alternative);"> /month</span></span>
+          <span style="font: var(--font-body1-reading); color: var(--label-neutral);">2–10 sites. Live stock, Xero, multi-site.</span>
+        </div>
+      </div>
+      <p style="margin: 0; font: 700 18px/1.4 'Pretendard JP', sans-serif;">Card fees are your own Stripe rate. We add nothing.</p>
+    </div>
+  </section>
+
+  <!-- 10. PILOT -->
+  <section id="pilot" data-screen-label="10 Pilot" style="padding: 0 20px clamp(72px, 10vw, 120px);">
+    <div style="max-width: 1160px; margin: 0 auto; background: var(--blue-50); color: #fff; border-radius: 28px; padding: clamp(32px, 5vw, 64px); display: flex; flex-wrap: wrap; gap: 28px; align-items: center; justify-content: space-between;">
+      <p style="margin: 0; flex: 1 1 480px; font: 700 clamp(24px, 3vw, 34px)/1.3 'Wanted Sans Variable', 'Pretendard JP', sans-serif; letter-spacing: -0.02em; text-wrap: pretty;">30 days free. We set it up from one photo of your menu within 48 hours. 10 table stands included. Cancel any time.</p>
+      <x-import component-from-global-scope="WantedDesignSystem_ec589a.Button" size="large" dc-props="{{ whiteBtn }}" hint-size="200px,48px">Start my free pilot</x-import>
+    </div>
+  </section>
+
+  <!-- 11. FAQ -->
+  <section data-screen-label="11 FAQ" style="padding: clamp(72px, 10vw, 120px) 20px; background: #fff;">
+    <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px;">
+      <h2 style="margin: 0; font: 700 clamp(28px, 3.4vw, 38px)/1.2 'Wanted Sans Variable', 'Pretendard JP', sans-serif; letter-spacing: -0.03em;">Questions owners ask</h2>
+      <div style="display: flex; flex-direction: column;">
+        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
+          <div style="border-top: 1px solid var(--line-normal-neutral);">
+            <button onClick="{{ f.toggle }}" aria-expanded="{{ f.open }}" style="width: 100%; min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 0; background: none; border: none; text-align: left; cursor: pointer; color: var(--cool-neutral-10); font: 700 18px/1.4 'Pretendard JP', sans-serif;">
+              <span>{{ f.q }}</span>
+              <span style="flex: none; display: flex; transform: {{ f.rot }}; transition: transform 160ms ease;"><x-import component-from-global-scope="WantedDesignSystem_ec589a.Icon" name="chevron-down" size="{{ 22 }}" hint-size="22px,22px"></x-import></span>
+            </button>
+            <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+              <p style="margin: 0 0 20px; font: var(--font-body1-reading); color: var(--label-neutral); max-width: 680px;">{{ f.a }}</p>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. FINAL CTA -->
+  <section data-screen-label="12 Final CTA" style="padding: clamp(80px, 12vw, 140px) 20px; background: var(--cool-neutral-10); color: #fff;">
+    <div style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; align-items: center; text-align: center;">
+      <h2 style="margin: 0; font: 700 clamp(36px, 5.6vw, 64px)/1.1 'Wanted Sans Variable', 'Pretendard JP', sans-serif; letter-spacing: -0.035em; text-wrap: balance;">See your own prime cost before Friday.</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
+        <x-import component-from-global-scope="WantedDesignSystem_ec589a.Button" size="large" hint-size="230px,48px">Book a 15-minute demo</x-import>
+        <x-import component-from-global-scope="WantedDesignSystem_ec589a.Button" size="large" dc-props="{{ ghostDark }}" onClick="{{ goPilot }}" hint-size="230px,48px">Start a 30-day free pilot</x-import>
+      </div>
+      <span style="font: var(--font-body2-normal); color: rgba(255,255,255,0.72);">Built for London restaurants. Month to month.</span>
+    </div>
+  </section>
+
+  <footer style="padding: 40px 20px 120px; background: var(--cool-neutral-10); color: rgba(255,255,255,0.72); border-top: 1px solid rgba(255,255,255,0.12);">
+    <ol style="max-width: 1160px; margin: 0 auto; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font: var(--font-label1-reading);">
+      <li>Industry estimate. Food cost of around 28–32% of sales is a common benchmark for UK casual dining; your own figure will differ.</li>
+      <li>UK National Living Wage for workers aged 21 and over from 1 April 2026: £12.71 an hour. 6 hours × £12.71 = £76.26.</li>
+      <li>Calculator figures are estimates based on the inputs you enter and the formula shown. They are not a forecast or a promise of savings.</li>
+    </ol>
+  </footer>
+
+  <sc-if value="{{ showSticky }}" hint-placeholder-val="{{ false }}">
+    <div style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); background: rgba(255,255,255,0.96); border-top: 1px solid var(--line-normal-neutral); box-shadow: 0 -4px 16px rgba(23,23,25,0.08);">
+      <x-import component-from-global-scope="WantedDesignSystem_ec589a.Button" size="large" fullWidth="{{ true }}" hint-size="100%,48px">Book a demo</x-import>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;headline&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;a&quot;,&quot;b&quot;,&quot;c&quot;],&quot;default&quot;:&quot;c&quot;,&quot;tsType&quot;:&quot;'a'|'b'|'c'&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;heroPhoto&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;stickyBar&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Mobile&quot;}}">
+class Component extends DCLogic {
+  state = { covers: 900, spend: 28, servers: 4, waste: 250, openFaq: 0, ack: false, w: typeof window !== 'undefined' ? window.innerWidth : 1200, scrolled: false };
+
+  componentDidMount() {
+    this._r = () => this.setState({ w: window.innerWidth });
+    this._s = () => { const s = window.scrollY > 480; if (s !== this.state.scrolled) this.setState({ scrolled: s }); };
+    window.addEventListener('resize', this._r);
+    window.addEventListener('scroll', this._s, { passive: true });
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this._r);
+    window.removeEventListener('scroll', this._s);
+  }
+
+  go(id) {
+    const el = document.getElementById(id);
+    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 8, behavior: 'smooth' });
+  }
+
+  renderVals() {
+    const p = this.props;
+    const H = {
+      a: "Your margin leaks between the table and the kitchen. See where — every night.",
+      b: "Fewer trips, fewer mistakes, more margin. Without changing your till.",
+      c: "Where did last Friday's profit go?"
+    };
+    const s = this.state;
+    const num = v => { const n = parseFloat(v); return isFinite(n) && n > 0 ? n : 0; };
+    const gbp = n => '£' + Math.round(n).toLocaleString('en-GB');
+    const wk = 52 / 12;
+    const sales = num(s.covers) * num(s.spend) * wk;
+    const set = k => e => this.setState({ [k]: e.target.value });
+
+    const Y = { text: '✓', bg: 'transparent', fg: 'var(--green-30)' };
+    const P = { text: 'Partial', bg: 'transparent', fg: 'var(--cool-neutral-40)' };
+    const N = { text: '—', bg: 'transparent', fg: 'var(--cool-neutral-90)' };
+    const T = { text: '✓', bg: 'var(--blue-99)', fg: 'var(--blue-50)' };
+    const rows = [
+      ['Keep your current till and terminal', Y, P],
+      ['Live prime cost with next actions', P, N],
+      ['Waste log and invoice price checks', P, N],
+      ['Staff requests with timers and escalation', N, P],
+      ['Kitchen tickets in the chef\u2019s language', N, P],
+      ['Allergen sign-off and kitchen acknowledgement', N, P],
+      ['Honest review requests and AI search pages', N, P],
+      ['Month to month, 0% markup on card fees', P, P]
+    ].map(r => ({ label: r[0], cells: [r[1], r[2], T] }));
+
+    const faqData = [
+      ['Do I have to replace my POS?', 'No. TableOS sits on top of the till and card terminal you already have.'],
+      ['Do I need new hardware?', 'No. Guests use their phones, staff use theirs, plus an optional cloud kitchen printer.'],
+      ['What about card fees?', 'You connect your own Stripe account; money goes straight to you; we add 0%.'],
+      ['Who is responsible for allergen information?', 'You confirm every dish; TableOS records it and enforces the kitchen acknowledgement.'],
+      ['Will this annoy my regulars?', 'Ordering is optional; staff can still take orders and payments.'],
+      ['Is guest data safe?', 'UK-hosted, UK GDPR, no nationality collected, marketing only with consent.']
+    ];
+    const faqs = faqData.map((f, i) => ({
+      q: f[0], a: f[1], open: s.openFaq === i, rot: s.openFaq === i ? 'rotate(180deg)' : 'none',
+      toggle: () => this.setState({ openFaq: s.openFaq === i ? -1 : i })
+    }));
+
+    const srv = Math.round(num(s.servers));
+    return {
+      headline: H[p.headline] || H.c,
+      heroPhoto: p.heroPhoto ?? true,
+      showSticky: (p.stickyBar ?? true) && s.w < 768 && s.scrolled,
+      ghostDark: { variant: 'outlined', color: 'assistive', style: { color: '#fff', border: '1px solid rgba(255,255,255,0.5)' } },
+      whiteBtn: { style: { background: '#fff', color: 'var(--blue-50)' }, onClick: () => this.go('pilot') },
+      go1: () => this.go('fix-1'), go2: () => this.go('fix-2'), go3: () => this.go('fix-3'),
+      goPricing: () => this.go('pricing'), goPilot: () => this.go('pilot'),
+      covers: s.covers, spend: s.spend, servers: s.servers, waste: s.waste,
+      onCovers: set('covers'), onSpend: set('spend'), onServers: set('servers'), onWaste: set('waste'),
+      outFood: gbp(sales * 0.3),
+      outWaste: gbp(num(s.waste) * wk),
+      outShift: gbp(6 * 12.71 * wk),
+      serversNote: srv > 0 ? `1 of your ${srv} servers, 6 hours` : '6 hours at £12.71',
+      notAck: !s.ack, ack: s.ack,
+      doAck: () => this.setState({ ack: true }),
+      resetAck: () => this.setState({ ack: false }),
+      compareRows: rows,
+      faqs
+    };
+  }
+}
+</script>
+</body>
+</html>
